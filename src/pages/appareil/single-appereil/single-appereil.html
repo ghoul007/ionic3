@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button clear (click)="dismissModal()">
+      close
+    </button>
     <ion-title>{{appareil.name}}</ion-title>
   </ion-navbar>
 
@@ -16,7 +19,7 @@
 <ion-content padding>
   <ion-card>
     <ion-card-header>
-        {{appareil.name}}
+      {{appareil.name}}
     </ion-card-header>
     <ion-card-content>
       <p *ngFor="let item  of appareil.description"> {{item}}</p>

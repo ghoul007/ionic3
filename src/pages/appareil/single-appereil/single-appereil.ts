@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the SingleAppereilPage page.
@@ -18,11 +18,16 @@ export class SingleAppereilPage implements OnInit {
     description: string[]
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private view: ViewController) {
   }
 
   ngOnInit() {
     this.appareil = this.navParams.get('appareilName')
+  }
+
+  dismissModal() {
+    this.view.dismiss();
   }
 
 }

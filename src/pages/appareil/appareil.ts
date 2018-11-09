@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { SingleAppereilPage } from './single-appereil/single-appereil';
 
 /**
@@ -34,7 +34,12 @@ export class AppareilPage {
       ]
     }
   ]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private modal: ModalController
+
+  ) {
   }
 
   ionViewDidLoad() {
@@ -43,9 +48,10 @@ export class AppareilPage {
 
 
   onLoadAppareil(appareil: { name: string, descripiton: string[] }) {
-    this.navCtrl.push(SingleAppereilPage, { appareilName: appareil })
+    // this.navCtrl.push(SingleAppereilPage, { appareilName: appareil })
     // console.log(type);
 
+    this.modal.create(SingleAppereilPage, { appareilName: appareil }).present();
   }
 
 }
