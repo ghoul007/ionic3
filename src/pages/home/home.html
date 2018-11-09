@@ -7,5 +7,6 @@
 </ion-header>
 
 <ion-content padding>
- <button ion-button (click)="onGotoApp()">Appareil</button>
+ <button ion-button [navPush]="appareilPage">Appareil</button>
+ <!-- <button ion-button (click)="onGotoApp()">Appareil</button> -->
 </ion-content>

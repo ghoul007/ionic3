@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+// import { NavController } from 'ionic-angular';
 import { AppareilPage } from '../appareil/appareil';
 
 @Component({
@@ -7,14 +7,15 @@ import { AppareilPage } from '../appareil/appareil';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  appareilPage= AppareilPage;
 
-  constructor(public navCtrl: NavController) {
+  // constructor(public navCtrl: NavController) {
 
-  }
+  // }
 
 
-  onGotoApp(){
-    this.navCtrl.push(AppareilPage)
-  }
+  // onGotoApp(){
+  //   this.navCtrl.push(AppareilPage)
+  // }
 
 }
