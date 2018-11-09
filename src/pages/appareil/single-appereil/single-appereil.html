@@ -7,12 +7,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{name}}</ion-title>
+    <ion-title>{{appareil.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique est fugit deserunt distinctio accusantium, incidunt perferendis amet nihil, laudantium delectus provident. A unde autem quidem dicta facilis, perspiciatis illum totam.
+  <ion-card>
+    <ion-card-header>
+        {{appareil.name}}
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngFor="let item  of appareil.description"> {{item}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

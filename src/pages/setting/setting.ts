@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SettingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, AlertController, Button } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,11 +8,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private alert: AlertController
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
+  }
+
+  oToggleLights() {
+    this.alert.create({
+      title: 'etes vous de vouloir continuer',
+      subTitle: ' cette action allumera les lumiere ',
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel'
+        },
+        {
+          text: 'confirmer',
+          handler: () => console.log('confirmé')
+        }
+      ]
+    }).present()
   }
 
 }

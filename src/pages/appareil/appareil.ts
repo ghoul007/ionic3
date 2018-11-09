@@ -16,6 +16,24 @@ import { SingleAppereilPage } from './single-appereil/single-appereil';
 })
 export class AppareilPage {
 
+  appareilList = [
+    {
+      name: 'MAchine a lever',
+      description: [
+        'volume: 6littre',
+        'Temps: 20minutes',
+        'Consommation: 15kw'
+      ]
+    },
+    {
+      name: 'tele',
+      description: [
+        'volume: 16littre',
+        'Temps: 2minutes',
+        'Consommation: 10kw'
+      ]
+    }
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -24,8 +42,8 @@ export class AppareilPage {
   }
 
 
-  onLoadAppareil(type) {
-    this.navCtrl.push(SingleAppereilPage, { appareilName: type })
+  onLoadAppareil(appareil: { name: string, descripiton: string[] }) {
+    this.navCtrl.push(SingleAppereilPage, { appareilName: appareil })
     // console.log(type);
 
   }

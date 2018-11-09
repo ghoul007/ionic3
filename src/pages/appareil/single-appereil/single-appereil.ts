@@ -13,14 +13,16 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'single-appereil.html',
 })
 export class SingleAppereilPage implements OnInit {
-  name: any;
+  appareil: {
+    name: string,
+    description: string[]
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ngOnInit() {
-    this.name = this.navParams.get('appareilName')
-
+    this.appareil = this.navParams.get('appareilName')
   }
 
 }

@@ -16,8 +16,12 @@
 
 
 <ion-content padding>
+<ion-list>
+  <button ion-item *ngFor="let item of appareilList"
+   (click)="onLoadAppareil(item)"> {{item.name}}</button>
+</ion-list>
 
-  <button ion-button (click)="onLoadAppareil('machine a laver')"> Machine a laver </button>
-  <button ion-button (click)="onLoadAppareil('tele')"> Tele </button>
-  <button ion-button navPop>back</button>
+  <!-- <button ion-button (click)="onLoadAppareil('machine a laver')"> Machine a laver </button> -->
+  <!-- <button ion-button (click)="onLoadAppareil('tele')"> Tele </button> -->
+  <!-- <button ion-button navPop>back</button> -->
 </ion-content>
