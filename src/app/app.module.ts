@@ -8,13 +8,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AppareilPage } from '../pages/appareil/appareil';
 import { SingleAppereilPage } from '../pages/appareil/single-appereil/single-appereil';
+import { SettingPage } from '../pages/setting/setting';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AppareilPage,
-    SingleAppereilPage
+    SingleAppereilPage,
+    SettingPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,9 @@ import { SingleAppereilPage } from '../pages/appareil/single-appereil/single-app
     MyApp,
     HomePage,
     AppareilPage,
-    SingleAppereilPage
+    SingleAppereilPage,
+    SettingPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
