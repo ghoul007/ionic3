@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, MenuController } from 'ionic-angular';
 import { SingleAppereilPage } from './single-appereil/single-appereil';
 import { AppareilService } from '../../services/appareils.service';
 import { Appareil } from '../../models/appareil';
@@ -20,7 +20,10 @@ export class AppareilPage {
   appareilList: Appareil[] = []
 
 
-  constructor(private modal: ModalController, private appareilService: AppareilService) {
+  constructor(
+    private modal: ModalController,
+    private menu: MenuController,
+    private appareilService: AppareilService) {
 
   }
 
@@ -40,6 +43,10 @@ export class AppareilPage {
     // console.log(type);
 
     this.modal.create(SingleAppereilPage, { "index": index }).present();
+  }
+
+  ontoogleMenu(){
+    this.menu.open()
   }
 
 }

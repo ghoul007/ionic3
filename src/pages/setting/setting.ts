@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Button } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Button, MenuController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,7 +11,8 @@ export class SettingPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private alert: AlertController
+    private alert: AlertController,
+    private menu: MenuController
   ) {
   }
 
@@ -35,5 +36,9 @@ export class SettingPage {
       ]
     }).present()
   }
+  ontoogleMenu() {
+    this.menu.open()
+  }
+
 
 }

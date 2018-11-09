@@ -11,6 +11,7 @@ import { SingleAppereilPage } from '../pages/appareil/single-appereil/single-app
 import { SettingPage } from '../pages/setting/setting';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AppareilService } from '../services/appareils.service';
+import { OptionPage } from '../pages/option/option';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppareilService } from '../services/appareils.service';
     AppareilPage,
     SingleAppereilPage,
     SettingPage,
-    TabsPage
+    TabsPage,
+    OptionPage
   ],
   imports: [
     BrowserModule,
@@ -32,13 +34,14 @@ import { AppareilService } from '../services/appareils.service';
     AppareilPage,
     SingleAppereilPage,
     SettingPage,
-    TabsPage
+    TabsPage,
+    OptionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AppareilService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
