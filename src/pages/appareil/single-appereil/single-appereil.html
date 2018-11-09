@@ -25,16 +25,22 @@
       <p *ngFor="let item  of appareil.description"> {{item}}</p>
     </ion-card-content>
 
-<ion-grid no-padding>
-  <ion-row>
-    <ion-col col-6>
-      <button ion-button full color="danger"> Etteindre</button>
-    </ion-col>
-    <ion-col col-6>
-      <button ion-button full color="secondary"> Allumer</button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button full color="danger"
+          [disabled]="!appareil.isOn"
+          (click)="ontoggleAppareil()"
+          > Etteindre</button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button full color="secondary"
+          [disabled]="appareil.isOn"
+          (click)="ontoggleAppareil()"
+          > Allumer</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
   </ion-card>
 </ion-content>

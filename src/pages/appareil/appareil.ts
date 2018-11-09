@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { SingleAppereilPage } from './single-appereil/single-appereil';
+import { AppareilService } from '../../services/appareils.service';
+import { Appareil } from '../../models/appareil';
 
 /**
  * Generated class for the AppareilPage page.
@@ -15,43 +17,29 @@ import { SingleAppereilPage } from './single-appereil/single-appereil';
   templateUrl: 'appareil.html',
 })
 export class AppareilPage {
+  appareilList: Appareil[] = []
 
-  appareilList = [
-    {
-      name: 'MAchine a lever',
-      description: [
-        'volume: 6littre',
-        'Temps: 20minutes',
-        'Consommation: 15kw'
-      ]
-    },
-    {
-      name: 'tele',
-      description: [
-        'volume: 16littre',
-        'Temps: 2minutes',
-        'Consommation: 10kw'
-      ]
-    }
-  ]
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private modal: ModalController
 
-  ) {
+  constructor(private modal: ModalController, private appareilService: AppareilService) {
+
   }
+
+
+  ionViewWillEnter() {
+    this.appareilList = this.appareilService.appareilList.slice()
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppareilPage');
   }
 
 
-  onLoadAppareil(appareil: { name: string, descripiton: string[] }) {
+  onLoadAppareil(index: number) {
     // this.navCtrl.push(SingleAppereilPage, { appareilName: appareil })
     // console.log(type);
 
-    this.modal.create(SingleAppereilPage, { appareilName: appareil }).present();
+    this.modal.create(SingleAppereilPage, { "index": index }).present();
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { Appareil } from '../../../models/appareil';
+import { AppareilService } from '../../../services/appareils.service';
 
 /**
  * Generated class for the SingleAppereilPage page.
@@ -13,21 +15,29 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
   templateUrl: 'single-appereil.html',
 })
 export class SingleAppereilPage implements OnInit {
-  appareil: {
-    name: string,
-    description: string[]
-  };
+  appareil: Appareil
+  index: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(
+    public appareilSrevice: AppareilService,
+    public navCtrl: NavController,
+    public navParams: NavParams,
     private view: ViewController) {
   }
 
   ngOnInit() {
-    this.appareil = this.navParams.get('appareilName')
+    this.index = this.navParams.get('index')
+    this.appareil = this.appareilSrevice.appareilList[this.index]
   }
 
   dismissModal() {
     this.view.dismiss();
   }
+
+
+  ontoggleAppareil() {
+    this.appareil.isOn = !this.appareil.isOn;
+  }
+
 
 }
