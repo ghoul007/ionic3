@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { Appareil } from '../../../models/appareil';
 import { AppareilService } from '../../../services/appareils.service';
+import { NgForm } from '@angular/forms';
 
 /**
  * Generated class for the SingleAppereilPage page.
@@ -39,5 +40,16 @@ export class SingleAppereilPage implements OnInit {
     this.appareil.isOn = !this.appareil.isOn;
   }
 
+
+  onsubmitForm(form: NgForm) {
+    console.log(form.value);
+    this.dismissModal()
+  }
+
+  onDeleteHours() {
+    this.appareil.startTime = ""
+    this.appareil.endTime = ""
+    this.dismissModal()
+  }
 
 }

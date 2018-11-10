@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-  <ion-card  [ngClass]="{'is-on':appareil.isOn, 'is-off': !appareil.isOn}" >
+  <ion-card [ngClass]="{'is-on':appareil.isOn, 'is-off': !appareil.isOn}">
     <ion-card-header>
       {{appareil.name}}
     </ion-card-header>
@@ -28,19 +28,29 @@
     <ion-grid no-padding>
       <ion-row>
         <ion-col col-6>
-          <button ion-button full color="danger"
-          [disabled]="!appareil.isOn"
-          (click)="ontoggleAppareil()"
-          > Etteindre</button>
+          <button ion-button full color="danger" [disabled]="!appareil.isOn" (click)="ontoggleAppareil()"> Etteindre</button>
         </ion-col>
         <ion-col col-6>
-          <button ion-button full color="secondary"
-          [disabled]="appareil.isOn"
-          (click)="ontoggleAppareil()"
-          > Allumer</button>
+          <button ion-button full color="secondary" [disabled]="appareil.isOn" (click)="ontoggleAppareil()"> Allumer</button>
         </ion-col>
       </ion-row>
     </ion-grid>
-
   </ion-card>
+
+  <form #f="ngForm" (ngSubmit)="onsubmitForm(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label>Heure d'allumage</ion-label>
+        <ion-datetime displayFormat='HH:mm' name="startTime" [(ngModel)]="appareil.startTime"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Heure d'extinction</ion-label>
+        <ion-datetime displayFormat='HH:mm' name="endTime" [(ngModel)]="appareil.endTime"></ion-datetime>
+      </ion-item>
+
+    </ion-list>
+
+    <button type="submit" ion-button full color="secondary">Enregistrer</button>
+    <button type="button" ion-button full color="secondary" (click)="onDeleteHours()">Delete</button>
+  </form>
 </ion-content>

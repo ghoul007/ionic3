@@ -11,7 +11,9 @@ export class AppareilService {
                 'Temps: 20minutes',
                 'Consommation: 15kw'
             ],
-            isOn: true
+            isOn: true,
+            startTime:"",
+            endTime:"",
         },
         {
             name: 'tele',
@@ -20,7 +22,9 @@ export class AppareilService {
                 'Temps: 2minutes',
                 'Consommation: 10kw'
             ],
-            isOn: false
+            isOn: false,
+            startTime:"",
+            endTime:"",
         }
     ]
     constructor(
