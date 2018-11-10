@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, MenuController } 
 import { SingleAppereilPage } from './single-appereil/single-appereil';
 import { AppareilService } from '../../services/appareils.service';
 import { Appareil } from '../../models/appareil';
+import { AppareilFormPage } from '../appareil-form/appareil-form';
 
 /**
  * Generated class for the AppareilPage page.
@@ -23,6 +24,7 @@ export class AppareilPage {
   constructor(
     private modal: ModalController,
     private menu: MenuController,
+    private nav: NavController,
     private appareilService: AppareilService) {
 
   }
@@ -45,7 +47,13 @@ export class AppareilPage {
     this.modal.create(SingleAppereilPage, { "index": index }).present();
   }
 
-  ontoogleMenu(){
+
+  onNewAppareil() {
+    this.nav.push(AppareilFormPage)
+  }
+
+
+  ontoogleMenu() {
     this.menu.open()
   }
 

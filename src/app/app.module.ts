@@ -12,6 +12,7 @@ import { SettingPage } from '../pages/setting/setting';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AppareilService } from '../services/appareils.service';
 import { OptionPage } from '../pages/option/option';
+import { AppareilFormPage } from '../pages/appareil-form/appareil-form';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OptionPage } from '../pages/option/option';
     SingleAppereilPage,
     SettingPage,
     TabsPage,
-    OptionPage
+    OptionPage,
+    AppareilFormPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { OptionPage } from '../pages/option/option';
     SingleAppereilPage,
     SettingPage,
     TabsPage,
-    OptionPage
+    OptionPage,
+    AppareilFormPage
   ],
   providers: [
     StatusBar,

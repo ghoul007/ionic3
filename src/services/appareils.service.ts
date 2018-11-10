@@ -12,8 +12,8 @@ export class AppareilService {
                 'Consommation: 15kw'
             ],
             isOn: true,
-            startTime:"",
-            endTime:"",
+            startTime: "",
+            endTime: "",
         },
         {
             name: 'tele',
@@ -23,12 +23,16 @@ export class AppareilService {
                 'Consommation: 10kw'
             ],
             isOn: false,
-            startTime:"",
-            endTime:"",
+            startTime: "",
+            endTime: "",
         }
     ]
     constructor(
     ) {
+    }
+
+    addApareil(appareil: Appareil) {
+        this.appareilList.push(appareil);
     }
 
 }

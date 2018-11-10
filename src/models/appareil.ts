@@ -3,6 +3,6 @@ export class Appareil {
         public name: string,
         public startTime='',
         public endTime='',
-        public description: string[],
-        public isOn: boolean) { }
+        public description: string[] =[],
+        public isOn: boolean = false) { }
 }
