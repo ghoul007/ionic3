@@ -1,3 +1,15 @@
 page-single-appereil {
 
+    .is-on{
+        ion-card-content, ion-card-header, ion-grid{
+            background:  #eeffee
+        }
+    }
+    .is-off{
+                ion-card-content, ion-card-header, ion-grid{
+                    background:  #ffeeee
+                }
+
+    }
+
 }
