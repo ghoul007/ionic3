@@ -2,7 +2,7 @@ page-single-appereil {
 
     .is-on{
         ion-card-content, ion-card-header, ion-grid{
-            background:  #eeffee
+            background:  color($colors, secondary-light)
         }
     }
     .is-off{
