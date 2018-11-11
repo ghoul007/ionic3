@@ -29,6 +29,17 @@
   </ion-list>
 
   <button full ion-button (click)="onNewAppareil()"> new Appareil</button>
+
+  <ion-card>
+    <ion-card-header>
+Donnes
+    </ion-card-header>
+    <ion-card-content>
+      <button block outline ion-button (click)="onSaveList()"> save Appareil</button>
+      <button block outline ion-button (click)="onFetchList()"> Fetch Appareil</button>
+
+    </ion-card-content>
+  </ion-card>
   <!-- <button ion-button (click)="onLoadAppareil('machine a laver')"> Machine a laver </button> -->
   <!-- <button ion-button (click)="onLoadAppareil('tele')"> Tele </button> -->
   <!-- <button ion-button navPop>back</button> -->
